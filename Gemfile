@@ -24,31 +24,18 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-# Add Capybara
-gem 'capybara'
-# Use PhantomJS driver for Capybara
-gem 'poltergeist'
-# Add Devise
+#gem 'bcrypt', '~> 3.1.7'
+
 gem 'devise'
-# Use Omniauth Twitter as the Provider
 gem 'omniauth-twitter'
-# Add Foundation::Rails
 gem 'foundation-rails'
-# Use Backbone as the SPA library 
 gem 'backbone-on-rails'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Add rspec-rails
   gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :development do
