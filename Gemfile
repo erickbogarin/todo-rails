@@ -30,6 +30,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 gem 'backbone-on-rails'
 
 group :development, :test do
