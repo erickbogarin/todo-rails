@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="large-12 columns">
+		<h1 class="title spacing" style="color: #7f8c97;">Todo List</h1>
+		<hr>
+	</div>
+</div>
+
+
+<section id="cd-timeline" class="cd-container cssanimations todos"></section>

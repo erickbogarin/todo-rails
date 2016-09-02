@@ -6,8 +6,11 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application", 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma' %>
+    <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+
+    <%=  yield :head %>
+    
     <%= csrf_meta_tags %>
   </head>
   
@@ -25,11 +28,15 @@
         <% end %>
       </ul>
     </header>
-    
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" , class: "alert-box"%>
-    <% end %>
-
+  
+      <% flash.each do |name, msg| %>
+        <div class="callout success" data-closable>
+         <%= content_tag :div, msg, id: "flash_#{name}" , class: "alert-box"%>
+         <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      <% end %>
     <%= yield %>
     
     <footer class="footer" style="margin-top: 50px">
