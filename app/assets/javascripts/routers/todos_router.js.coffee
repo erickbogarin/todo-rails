@@ -1,11 +1,17 @@
 class Kristen.Routers.Todos extends Backbone.Router
 	routes:
 		'todos': 'index'
+		'todos/:id' : 'show'
+		'*path': 'index'
 
-	initialize: ->
-		@collection = new Kristen.Collections.Todos()
-		@collection.reset($('#container').data('todos'))
-
+	initialize: (options) ->
+		@todos = new Kristen.Collections.Todos()
+		@todos.reset options.todos		
+	
 	index: ->
-		view = new Kristen.Views.TodosIndex(collection: @collection)
-		$('#container').html(view.render().el)
+		@view = new Kristen.Views.TodosIndexView({collection: @todos})		
+		
+	show: (id) ->
+	    todo = @todos.get(id)
+	    @view = new Kristen.Views.TodoEditView({model: todo})
+	    

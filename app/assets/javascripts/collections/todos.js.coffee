@@ -1,3 +1,3 @@
 class Kristen.Collections.Todos extends Backbone.Collection
-  url: '/todos'	
+  url: '/api/todos'	
   model: Kristen.Models.Todo

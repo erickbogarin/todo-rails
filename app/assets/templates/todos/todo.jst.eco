@@ -1,16 +1,9 @@
-
-
 <div class="cd-timeline-img">
 </div> <!-- cd-timeline-img -->
 
 <div class="cd-timeline-content">
-	<h2><%= @todo.get('name') %><h2>
-	<p><%= @todo.get('description') %></p>
+    <h2><%= @todo.get('name') %>
 
-	<input id="completed" type="checkbox" 
-		<% if @todo.get('completed'): %>
-			checked
-		<% end %>	
-	>
-	<label for="completed">Done</label>
+	<label for="completed">Done</label><br>
+	<a href="#" class="cd-read-more">Edit</a>
 </div>
