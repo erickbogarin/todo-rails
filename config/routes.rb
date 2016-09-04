@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'todos' => 'todos#index'
 
   scope "api" do
-    resources :todos,  only: [:new, :create, :destroy, :show]
+    resources :todos,  only: [:index, :new, :create, :destroy, :show]
   end  
   	
   
