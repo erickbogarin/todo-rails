@@ -1,0 +1,35 @@
+/*!
+ * # Kristen app
+ * https://github.com/erickbogarin/kristen
+ *
+ * Copyright 2016 Erick Bogarin
+ *
+ */
+
+// --------------------------------------------------
+// app.scss
+// --------------------------------------------------
+// This is the main SCSS file that imports everything
+// that gets compiled into app.css
+
+// Import order:
+// 1.  Encoding
+// 2.  Helpers
+// 3.  Layout
+
+//
+// 1. Encoding
+// --------------------------------------------------
+@charset 'UTF-8';
+
+//
+// 2. Helpers
+// --------------------------------------------------
+@import 'helpers/variables';
+
+//
+// 2. Layout
+// --------------------------------------------------
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/site';
