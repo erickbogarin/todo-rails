@@ -17,3 +17,13 @@
 
 
 $(function(){ $(document).foundation(); });
+
+function currentUrl() {
+    pathname = location.pathname.split("/");
+    return pathname[pathname.length-1];
+}
+
+$(function() {
+    $('.header-subnav a[id="' + currentUrl() + '"]').addClass('is-active');
+});
+

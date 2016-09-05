@@ -1,5 +1,5 @@
 class Kristen.Views.TodosIndexView extends Backbone.View
-  
+
   el: '#container'
 
   template: JST['todos/index']
@@ -9,7 +9,7 @@ class Kristen.Views.TodosIndexView extends Backbone.View
     @addAll()
     
   addAll: ->
-    @collection.forEach(@addOne, @)  
+    @collection.forEach(@addOne, @)
 
   render: ->
     $(@el).html(@template())
@@ -17,7 +17,4 @@ class Kristen.Views.TodosIndexView extends Backbone.View
 
   addOne: (todo) =>
     @view = new Kristen.Views.TodoView(model: todo)
-    @$('.todos').append(@view.render().el)  
-
-  
-
+    @$('.todos').append(@view.render().el)

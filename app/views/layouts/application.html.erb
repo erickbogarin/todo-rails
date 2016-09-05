@@ -6,7 +6,9 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma' %>
+    <%= stylesheet_link_tag "application" %>
+    <!-- Google Fonts-->
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma' %>
     <%= javascript_include_tag "application" %>
 
     <%=  yield :head %>
@@ -15,46 +17,55 @@
   </head>
   
   <body>
+
     <header class="header">
+      
       <h1 class="headline">
         <%= link_to "Kristen", root_url, :class => "logo" %>  <small class="text-muted">plain your time</small></h1>
-      <ul class="header-subnav">
-        <% if user_signed_in? %>
-          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-        <% end %>
-      </ul>
+
+        <!-- main-menu -->
+        <ul class="header-subnav">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Todos', todos_path , id: 'todos' %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path, id: 'edit' %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, 'id': 'logout' %></li>
+          <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path, id: 'sign_up' %></li>
+            <li><%= link_to 'Login', new_user_session_path, id: 'sign_in' %></li>
+          <% end %>
+        </ul>
+      
     </header>
   
-      <% flash.each do |name, msg| %>
-        <div class="callout success" data-closable>
-         <%= content_tag :div, msg, id: "flash_#{name}" , class: "alert-box"%>
-         <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <% flash.each do |name, msg| %>
+      <div class="callout success" data-closable>
+        <%= content_tag :div, msg, id: "flash_#{name}" , class: "alert-box"%>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
           <span aria-hidden="true">&times;</span>
         </button>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
+
+    <!-- page content -->
     <%= yield %>
     
     <footer class="footer" style="margin-top: 50px">
-    <div class="row">
-      <div class="small-12 columns">
-        <p class="slogan">Finger-lickin' good</p>
-        <p class="links">
-          <a href="#">Home</a>
-          <a href="#">Blog</a>
-          <a href="#">Pricing</a>
-          <a href="#">About</a>
-          <a href="#">Faq</a>
-          <a href="#">Contact</a>
-        </p>
-        <p class="copywrite">Copywrite not copypwrite © 2015</p>
-      </div>
-    </div>
-  </footer>
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="slogan">Finger-lickin' good</p>
+          <!-- menu-footer -->
+          <p class="links">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">Pricing</a>
+            <a href="#">About</a>
+            <a href="#">Faq</a>
+            <a href="#">Contact</a>
+          </p> <!-- end menu-footer -->
+          <p class="copywrite">Copywrite not copypwrite © 2015</p>
+        </div>
+      </div> <!-- end row -->
+    </footer>
 
   </body>
 </html>

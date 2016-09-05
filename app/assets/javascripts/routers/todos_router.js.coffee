@@ -6,12 +6,11 @@ class Kristen.Routers.Todos extends Backbone.Router
 
 	initialize: (options) ->
 		@todos = new Kristen.Collections.Todos()
-		@todos.reset options.todos		
-	
+		@todos.reset options.todos
+
 	index: ->
-		@view = new Kristen.Views.TodosIndexView({collection: @todos})		
-		
+		@view = new Kristen.Views.TodosIndexView({collection: @todos})
+
 	show: (id) ->
-	    todo = @todos.get(id)
-	    @view = new Kristen.Views.TodoEditView({model: todo})
-	    
+	  todo = @todos.get(id)
+	  @view = new Kristen.Views.TodoEditView({model: todo})

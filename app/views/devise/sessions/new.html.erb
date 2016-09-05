@@ -1,9 +1,9 @@
 
 
 <div class="row">
-  
+
   <div class="large-5 columns">
-    <h2 class="text-left spacing">Log in</h2>
+    <h2 class="text-left title">Log in</h2>
     <hr>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
@@ -24,14 +24,14 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in", class: "expanded hollow button" %>
+      <%= f.submit "Log in", class: "expanded button" %>
     </div>
     <% end %>
 
   </div>
   <div class="large-1 colums"></div>
   <div class="large-6 columns">
-    <h2 class="spacing">Lorem Ipsum</h2>
+    <h2 class="title">Lorem Ipsum</h2>
     <h5 class="subheader text-justify"> Nullam tempus nisl et finibus dictum. Nullam pulvinar cursus nisl. Nulla ut lacus sit amet libero volutpat ornare. Duis ut pharetra magna.</h5>
     <hr class="dotted">
     <%= render "devise/shared/links" %>

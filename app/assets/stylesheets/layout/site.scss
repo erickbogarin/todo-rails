@@ -12,8 +12,9 @@ body {
 }
 
 /* title */
-.title { 
-  padding-top: 40px;
+.title {
+  color: $color-dark-grey;
+  margin-top: 1em
 }
 
 /* text */
@@ -22,14 +23,10 @@ body {
   font-weight: 800;
   &-muted{
     color: $color-gray;
-  }  
+  }
 }
 
 /* dotted */
 .dotted {
   border-style: dashed;
-}
-
-.spacing {
-  margin-top: 1em
 }
