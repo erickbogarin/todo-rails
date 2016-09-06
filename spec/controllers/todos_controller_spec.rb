@@ -26,9 +26,9 @@ RSpec.describe TodosController, type: :controller do
   end
 
   describe "GET #show" do
-  	before {
-		request.accept = "application/json"
-    	get :index       
+	  	before {
+			request.accept = "application/json"
+	    	get :index       
 		}
 		it "returns json success" do	      	    	
      	expect(response).to have_http_status(:success)
