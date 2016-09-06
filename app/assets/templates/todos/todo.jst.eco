@@ -2,13 +2,13 @@
 </div> <!-- cd-timeline-img -->
 
 <div class="cd-timeline-content">
-    <h2><%= @todo.get('name') %>
+    <h2><%= @todo.get('name') %></h2>
 
-	<label for="completed">Done</label><br>
-	<a href="#" class="success button edit" title="Edit">
-    <i class="fi-page-edit"></i>
-  </a>
-  <a href="#" class="alert button destroy" title="Remove">
-      <i class="fi-trash"></i>
-  </a>
+	<label for="completed">Done</label>
+	<span href="#" class="success button edit" title="Edit">
+    	<i class="fi-page-edit"></i>
+  	</span>
+	<span class="alert button destroy" title="Remove">
+    	<i class="fi-trash"></i>
+	</span>
 </div>

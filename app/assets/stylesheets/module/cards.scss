@@ -1,0 +1,37 @@
+/*-------------
+  # cards
+--------------*/
+
+@media (min-width: 900px) {
+
+	/* timeline block */
+	.cd-timeline-block {
+		position: relative;
+
+		& .edit, .destroy {
+			opacity: 0;
+			transition: opacity 0.2s linear;
+		}
+
+		&:hover {
+			& .edit, .destroy {
+				opacity: 1;
+			}
+		}
+	}
+
+	/* buttons */
+	.edit, .destroy {
+		border: 2px solid #0d0c0c;
+		border-radius: 50%;
+		position: absolute;
+		top: -15%;
+	}
+	.destroy {
+		right: 20px;
+	}
+	.edit {
+		right: 70px;
+	}
+	
+}
