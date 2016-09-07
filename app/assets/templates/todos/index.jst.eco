@@ -1,6 +1,15 @@
 <div class="row">
-	<div class="large-12 columns">
-		<h1 class="title">Todo List</h1>
+	<div class="large-12 columns">		
+		<div id="message"></div>
+		<form id="todo-form" class="input-group" method="post">			
+			<span class="input-group-label">
+				<i class="fi fi-clipboard-pencil"></i>
+			</span>
+			<input id="new-todo" type="text" class="input-group-field" placeholder="New todo"/>
+			<div class="input-group-button">
+		    	<input type="submit" class="button" value="Submit">
+		  	</div>
+		</form>
 		<hr>
 	</div>
 </div>

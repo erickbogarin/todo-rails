@@ -22,9 +22,10 @@ class Kristen.Views.TodoEditView extends Backbone.View
 	update: (e) ->
 		e.preventDefault()
 		e.stopPropagation()
-		@model.save @.newAttributes(),
+		@model.save @newAttributes(),
 		success: (todo) =>			
-			@model = todo
+			wait: true
+			@undelegateEvents()
 			Backbone.history.navigate("todos", true)
 
 	newAttributes: -> { name: @.$('#name').val(), description: @.$('#description').val() }

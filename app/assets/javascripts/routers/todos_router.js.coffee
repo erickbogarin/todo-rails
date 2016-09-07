@@ -12,5 +12,5 @@ class Kristen.Routers.Todos extends Backbone.Router
 		@view = new Kristen.Views.TodosIndexView({collection: @todos})
 
 	show: (id) ->
-	  todo = @todos.get(id)
-	  @view = new Kristen.Views.TodoEditView({model: todo})
+		todo = @todos.get(id)
+		@view = new Kristen.Views.TodoEditView({model: todo})
