@@ -3,7 +3,7 @@ class Kristen.Views.TodoEditView extends Backbone.View
 	el: '#container'
 
 	template: JST['todos/edit']
-
+	
 	events: ->
 		'click .cancel' : 'cancel'
 		'submit #edit-todo' : 'update'
@@ -17,15 +17,15 @@ class Kristen.Views.TodoEditView extends Backbone.View
 
 	cancel: (e) ->
 		e.preventDefault()
+		e.stopPropagation()
 		Backbone.history.navigate("todos", true)
 
 	update: (e) ->
 		e.preventDefault()
 		e.stopPropagation()
 		@model.save @newAttributes(),
-		success: (todo) =>			
+		success: (todo) ->			
 			wait: true
-			@undelegateEvents()
 			Backbone.history.navigate("todos", true)
 
 	newAttributes: -> { name: @.$('#name').val(), description: @.$('#description').val() }

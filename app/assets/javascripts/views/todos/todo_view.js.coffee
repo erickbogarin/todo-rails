@@ -1,7 +1,8 @@
 class Kristen.Views.TodoView extends Backbone.View
 
-	template: JST['todos/todo']
 	className: 'cd-timeline-block'
+
+	template: JST['todos/todo']
 
 	initialize: ->
 		@model.on('destroy', @remove, @)
@@ -9,6 +10,7 @@ class Kristen.Views.TodoView extends Backbone.View
 	events: ->
 		'click .edit': 'showTodo'
 		'click .destroy': 'destroy'
+		'click .switch-input': 'toggleCompleted'
 
 	render: ->
 	    $(@el).html(@template(todo: @model))
@@ -18,5 +20,9 @@ class Kristen.Views.TodoView extends Backbone.View
 	    e.preventDefault()
     	Backbone.history.navigate("todos/#{@model.get('id')}", true)
 
+	toggleCompleted: () ->
+		@$('.cd-timeline-img').toggleClass('cd-completed')		
+		@.model.toggle()
+
 	destroy: () ->
-  	this.model.destroy();
+  		this.model.destroy();

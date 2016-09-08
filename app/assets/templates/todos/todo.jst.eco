@@ -1,14 +1,31 @@
-<div class="cd-timeline-img">
-</div> <!-- cd-timeline-img -->
+<div class="cd-timeline-img <%= "cd-completed" if @todo.get('completed') %> ">
+</div>
 
 <div class="cd-timeline-content">
-    <h2><%= @todo.get('name') %></h2>
 
-	<label for="completed">Done</label>
+    <h2><%= @todo.get('name') %></h2>
+	
+	<p>Completed?</p>
+	<div class="switch large">
+	  <input class="switch-input" id="<%=@todo.get('id')%>" type="checkbox" name="<%=@todo.get('name')%>">
+	  <label class="switch-paddle" for="<%=@todo.get('id')%>">
+	    <span class="show-for-sr">Do you like me?</span>
+	    <% if @todo.get('completed') : %>
+	    	<span class="switch-active" aria-hidden="true">No</span>
+	    	<span class="switch-inactive" aria-hidden="true">Yes</span>
+	    <% else: %>	
+	    	<span class="switch-active" aria-hidden="true">Yes</span>
+	    	<span class="switch-inactive" aria-hidden="true">No</span>
+	    <% end %>	
+	  </label>
+	</div>  <!-- .switch.large -->	
+
+	<!-- action buttons -->
 	<span href="#" class="success button edit" title="Edit">
     	<i class="fi-page-edit"></i>
   	</span>
 	<span class="alert button destroy" title="Remove">
     	<i class="fi-trash"></i>
 	</span>
-</div>
+
+</div>  <!-- cd-timeline-content -->

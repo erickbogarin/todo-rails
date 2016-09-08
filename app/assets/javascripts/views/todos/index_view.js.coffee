@@ -4,7 +4,7 @@ class Kristen.Views.TodosIndexView extends Backbone.View
 
   template: JST['todos/index']
 
-  initialize: ->    
+  initialize: ->
     @collection.on('add', @addOne, @)
     @render()
     @addAll()
@@ -14,19 +14,18 @@ class Kristen.Views.TodosIndexView extends Backbone.View
     'submit #todo-form' : 'createTodo' 
 
   createTodo: (e) ->    
-      e.preventDefault()
-      e.stopPropagation()
+    e.preventDefault()
+    e.stopPropagation()
 
-      if @input.val()
-        attributes = name: @input.val()
+    if @input.val()
+      attributes = name: @input.val()
 
-        @collection.create attributes,
-          wait: true
-          success: (todo) ->
-            @$('#new-todo').val('')
-            @$('#message').html('Todo <strong>' + todo.get('name') + '</strong> has been successfully registered!')
-    
-
+      @collection.create attributes,
+        wait: true
+        success: (todo) ->
+          @$('#new-todo').val('')
+          @$('#message').html('Todo <strong>' + todo.get('name') + '</strong> has been successfully registered!')
+            
   addAll: ->
     @collection.forEach(@addOne, @)
 
