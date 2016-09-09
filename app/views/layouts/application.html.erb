@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Kristen" %></title>
 
     <%= stylesheet_link_tag "application" %>
     <!-- Google Fonts-->
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans|Baloo+Tamma|Lato:300,400' %>
     <%= javascript_include_tag "application" %>
 
     <%=  yield :head %>
@@ -26,8 +26,8 @@
         <!-- main-menu -->
         <ul class="header-subnav">
           <% if user_signed_in? %>
-            <li><%= link_to 'Todos', todos_path , id: 'todos' %></li>
-            <li><%= link_to 'Edit profile', edit_user_registration_path, id: 'edit' %></li>
+            <li><%= link_to 'Todos', todos_path , id: 'todos' %></li>            
+            <li><%= link_to current_user.name, current_user, id: "#{current_user.id}" %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, 'id': 'logout' %></li>
           <% else %>
             <li><%= link_to 'Sign up', new_user_registration_path, id: 'sign_up' %></li>

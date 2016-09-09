@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-  :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable
   
   has_many :authorizations
   
-  validates :email, :current_password, presence: true, if: :auth_empty?
+  validates :email, presence: true, if: :auth_empty?
 
   def self.from_omniauth(auth, current_user)
     
@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
     else
       super
     end	
+  end
+
+  def username 
+    authorizations.pluck(:username).to_s.delete! '[""]'
   end
 
   def auth_empty?

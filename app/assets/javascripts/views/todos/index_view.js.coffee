@@ -24,7 +24,7 @@ class Kristen.Views.TodosIndexView extends Backbone.View
         wait: true
         success: (todo) ->
           @$('#new-todo').val('')
-          @$('#message').html('Todo <strong>' + todo.get('name') + '</strong> has been successfully registered!')
+          alert 'Todo ' + todo.get('name') + ' has been successfully registered!'
             
   addAll: ->
     @collection.forEach(@addOne, @)

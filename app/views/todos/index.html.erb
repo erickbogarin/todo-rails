@@ -2,5 +2,7 @@
 	<%= stylesheet_link_tag params[:controller] %>
 	<%= javascript_include_tag params[:controller] %>
 <% end %>
+
+<% content_for :title, "Todos" %>
 				
 <%= content_tag "div", "Loading..", id: "container", data: {todos: @todos  } %>

@@ -1,6 +1,5 @@
 <div class="row">
-	<div class="large-12 columns">		
-		<div id="message"></div>
+	<div class="large-12 columns">				
 		<form id="todo-form" class="input-group" method="post">			
 			<span class="input-group-label">
 				<i class="fi fi-clipboard-pencil"></i>
@@ -11,6 +10,7 @@
 		  	</div>
 		</form>
 		<hr>
+		<div id="message"></div>
 	</div>
 </div>
 

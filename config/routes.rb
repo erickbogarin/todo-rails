@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   get 'todos' => 'todos#index'
 
   scope "api" do
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  resources :users
 
   root 'main#index'
 

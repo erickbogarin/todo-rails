@@ -1,0 +1,50 @@
+<div class="row">
+  
+  <div class="columns large-12">
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+     
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, :required => true, :autofocus => true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :about %><br />
+        <%= f.text_field :about %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: 'button' %>
+      </div>
+    <% end %>
+
+    <div>
+  </div>
+  Connect Account
+
+
+
+  <% ['twitter'].each do |provider| %>
+
+    <% if current_user.authorizations.pluck(:provider).include?(provider.to_s) %>
+      <%= provider.to_s.titleize %> Connected
+    <% else %>
+        <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path('user', provider) %>
+    <% end %>
+  <br/>
+  <% end %>
+
+  </div>
+
+</div>
