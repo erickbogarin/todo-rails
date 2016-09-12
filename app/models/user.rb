@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :authorizations
   
   validates :email, presence: true, if: :auth_empty?
+  validates :email, uniqueness: true
+  validates :password, :length => {:within => 6..40}
 
   def self.from_omniauth(auth, current_user)
     

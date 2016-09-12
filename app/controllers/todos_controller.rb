@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   
   def index
     @todos = Todo.where(user_id: current_user.id).order(:name)
