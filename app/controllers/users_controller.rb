@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def update 
+		params[:user].delete(:password) if params[:user][:password].blank?
 		if @user.update_attributes(user_params)
 			redirect_to @user, notice: 'User was successfully updated.'
 		else

@@ -1,0 +1,16 @@
+language: ruby
+cache: bundler
+sudo: false
+
+before_install:
+  - gem install bundler
+
+rvm:
+  - 2.2
+
+branches:
+  only:
+    - master
+
+before_script: "bundle exec rake db:drop db:create db:migrate"
+script: "bundle exec rspec spec/"
