@@ -1,5 +1,6 @@
 == README
 {<img src="https://travis-ci.org/erickbogarin/todo-rails.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/erickbogarin/todo-rails]
+{<img src="https://codeclimate.com/github/erickbogarin/todo-rails/badges/gpa.svg" />}[https://codeclimate.com/github/erickbogarin/todo-rails]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
