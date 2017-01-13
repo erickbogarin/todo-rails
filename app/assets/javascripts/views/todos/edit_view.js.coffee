@@ -1,5 +1,4 @@
 class Kristen.Views.TodoEditView extends Backbone.View
-
 	el: '#container'
 
 	template: JST['todos/edit']
@@ -9,16 +8,14 @@ class Kristen.Views.TodoEditView extends Backbone.View
 		'submit #edit-todo' : 'update'
 
 	initialize: ->
-    	@render()
+		@render()
 
-	render: ->
+	render: ->		
 		$(@el).html(@template(todo: @model))
-		@
-
-	cancel: (e) ->
-		e.preventDefault()
+		
+	cancel: (e) ->		
 		e.stopPropagation()
-		Backbone.history.navigate("todos", true)
+		Kristen.Routers.todos.navigate("todos", true)
 
 	update: (e) ->
 		e.preventDefault()
@@ -26,6 +23,9 @@ class Kristen.Views.TodoEditView extends Backbone.View
 		@model.save @newAttributes(),
 		success: (todo) ->			
 			wait: true
-			Backbone.history.navigate("todos", true)
+			Kristen.Routers.todos.navigate("todos", true)
 
-	newAttributes: -> { name: @.$('#name').val(), description: @.$('#description').val() }
+	newAttributes: -> { 
+		name: @.$('#name').val(),
+		description: @.$('#description').val() 
+	}

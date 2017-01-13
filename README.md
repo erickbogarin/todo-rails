@@ -25,11 +25,12 @@ Client-side:
 * CoffeScript
 
 ## How to run this application
-1. Make sure to set YOUR **TWITTER_KEY** and **TWITTER_SECRET** ENV variables
-2. Open a CLI and then copy the following commands
+1. Set **TWITTER_KEY** and **TWITTER_SECRET** ENV variables
+2. Open the CLI and copy the following commands
 ```
 git clone https://github.com/erickbogarin/todo-rails.git
 cd todo-rails
+bundle install
 bundle exec rake db:drop db:create db:migrate
 rails s
 ```

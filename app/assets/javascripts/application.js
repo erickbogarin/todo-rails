@@ -15,7 +15,6 @@
 //= require foundation
 //= require underscore
 
-
 $(function(){ $(document).foundation(); });
 
 function currentUrl() {
@@ -26,4 +25,3 @@ function currentUrl() {
 $(function() {
     $('.header-subnav a[id="' + currentUrl() + '"]').addClass('is-active');
 });
-

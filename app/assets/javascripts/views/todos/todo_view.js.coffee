@@ -4,25 +4,30 @@ class Kristen.Views.TodoView extends Backbone.View
 
 	template: JST['todos/todo']
 
-	initialize: ->
-		@model.on('destroy', @remove, @)
+	initialize: ->		
+		@listenTo(@model, 'destroy', @remove)
 
-	events: ->
+	events:
 		'click .edit': 'showTodo'
 		'click .destroy': 'destroy'
 		'click .switch-input': 'toggleCompleted'
 
-	render: ->
-	    $(@el).html(@template(todo: @model))
-	    @
+	render: ->		
+		$(@el).html(@template(todo: @model))		
+		@
 
-	showTodo: (e) ->
-	    e.preventDefault()
-    	Backbone.history.navigate("todos/#{@model.get('id')}", true)
+	showTodo: (e) ->		
+		e.stopPropagation()			
+		Kristen.Routers.todos.navigate("todos/#{@model.get('id')}", true)
 
 	toggleCompleted: () ->
 		@$('.cd-timeline-img').toggleClass('cd-completed')		
 		@.model.toggle()
 
 	destroy: () ->
-  		this.model.destroy();
+  		@model.destroy()
+  		this.remove()
+  		return false
+
+  	onClose: () ->
+  		@model.unbind('change', @render)

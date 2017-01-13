@@ -6,7 +6,7 @@
 			</span>
 			<input id="new-todo" type="text" class="input-group-field" placeholder="New todo"/>
 			<div class="input-group-button">
-		    	<input type="submit" class="button" value="Submit">
+		    	<button type="submit" class="button">Submit<button>
 		  	</div>
 		</form>
 		<hr>
