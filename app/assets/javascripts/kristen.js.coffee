@@ -6,12 +6,8 @@ window.Kristen =
   Routers: { todos: null }
   initialize: ->
   	@.Routers.todos = new Kristen.Routers.Todos(
-      todos: $('#container').data('todos'),
-      appView: new Kristen.Views.AppView()
-    )
-  	#@.Routers.todos.on('route:index', () ->
-  	#	console.log('test')
-  	#)
+      todos: $('#container').data('todos')
+    )  	
   	Backbone.history.start(pushState: true)  	
 
 $(document).ready -> 

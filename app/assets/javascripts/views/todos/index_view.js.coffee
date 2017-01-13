@@ -4,7 +4,7 @@ class Kristen.Views.TodosIndexView extends Backbone.View
 
   template: JST['todos/index']
 
-  initialize: ->    
+  initialize: ->        
     @listenTo(@collection, 'add', @addOne)    
     @render()
     @addAll()    
@@ -34,3 +34,4 @@ class Kristen.Views.TodosIndexView extends Backbone.View
 
   render: ->    
     $(@el).html(@template())
+

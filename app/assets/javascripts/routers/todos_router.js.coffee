@@ -14,7 +14,7 @@ class Kristen.Routers.Todos extends Backbone.Router
 
 	show: (id) ->		
 		todo = @todos.get(id)
-		@view = new Kristen.Views.TodoEditView({model: todo})
+		@view = new Kristen.Views.TodoEditView({model: todo})		
 	
 	execute: (callback, args, name) ->		
 		if @view						
