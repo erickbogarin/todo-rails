@@ -5,7 +5,7 @@
 
 Basic application with <tt>Ruby on Rails</tt> where users can control, visualize and organize tasks.
 
-[Live Demo](https://todos-eb.herokuapp.com)
+[Live Demo](https://kristen-app.herokuapp.com/)
 
 ### Technology Stack
 
